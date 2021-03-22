@@ -16,17 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_checkWork__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/checkWork */ \"./src/modules/checkWork.js\");\n\n(0,_modules_checkWork__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://glo-diplom/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu */ \"./src/modules/burgerMenu.js\");\n\n\n\n(0,_modules_burgerMenu__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://glo-diplom/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/modules/checkWork.js":
-/*!**********************************!*\
-  !*** ./src/modules/checkWork.js ***!
-  \**********************************/
+/***/ "./src/modules/burgerMenu.js":
+/*!***********************************!*\
+  !*** ./src/modules/burgerMenu.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar checkWork = function checkWork() {\n  alert('ok');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (checkWork);\n\n//# sourceURL=webpack://glo-diplom/./src/modules/checkWork.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar burgerMenu = function burgerMenu() {\n  var hiddenSmall = document.querySelector('.hidden-small'),\n      hiddenLarge = document.querySelector('.hidden-large'),\n      topMenu = document.querySelector('.top-menu'),\n      headSlider = document.querySelector('.head-slider'),\n      head = document.querySelector('.head');\n\n  var handlerMenu = function handlerMenu() {\n    if (document.documentElement.clientWidth < 768) {\n      hiddenSmall.style.display = 'none';\n      hiddenLarge.style.display = 'block';\n      setTimeout(function () {\n        topMenu.style.cssText = \"\\n                margin-top: \".concat(head.offsetHeight, \"px;\\n                position: fixed;\\n                \");\n        headSlider.style.paddingTop = '25px';\n      }, 0);\n      window.addEventListener('scroll', function () {\n        if (document.documentElement.scrollTop > 0) {\n          topMenu.style.marginTop = '0';\n        } else if (document.documentElement.scrollTop === 0) {\n          topMenu.style.marginTop = \"\".concat(head.offsetHeight, \"px\");\n        }\n      });\n    } else if (window.innerWidth >= 768) {\n      hiddenLarge.style.display = 'none';\n      hiddenSmall.style.display = 'flex';\n      topMenu.style.cssText = \"\\n                margin-top: 0x;\\n                position: inherit;\\n                \";\n      headSlider.style.paddingTop = '0';\n      window.addEventListener('scroll', function () {\n        if (document.documentElement.scrollTop === 0) {\n          topMenu.style.marginTop = '0';\n        }\n      });\n    }\n  };\n\n  handlerMenu();\n  window.addEventListener('resize', handlerMenu);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (burgerMenu);\n\n//# sourceURL=webpack://glo-diplom/./src/modules/burgerMenu.js?");
 
 /***/ })
 

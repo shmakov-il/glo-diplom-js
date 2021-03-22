@@ -1,6 +1,7 @@
-import checkWork from "./modules/checkWork";
+'use strict';
 
 
+import burgerMenu from "./modules/burgerMenu";
 
 
-checkWork();
+burgerMenu();
