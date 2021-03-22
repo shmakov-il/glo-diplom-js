@@ -1,10 +1,11 @@
-
 const burgerMenu = () => {
     const hiddenSmall = document.querySelector('.hidden-small'),
         hiddenLarge = document.querySelector('.hidden-large'),
         topMenu = document.querySelector('.top-menu'),
         headSlider = document.querySelector('.head-slider'),
-        head = document.querySelector('.head');
+        head = document.querySelector('.head'),
+        btnOpen = document.querySelector('img[src="images/menu-button.png"]'),
+        popupMenu = document.querySelector('.popup-menu');
 
     const handlerMenu = () => {
         if (document.documentElement.clientWidth < 768) {
@@ -43,6 +44,14 @@ const burgerMenu = () => {
     handlerMenu();
 
     window.addEventListener('resize', handlerMenu);
+
+    btnOpen.addEventListener('click', () => {
+        document.querySelector('.popup-menu').style.display = 'flex';
+    });
+
+    popupMenu.addEventListener('click', () => {
+        popupMenu.style.display = 'none';
+    });
 };
 
 export default burgerMenu;
