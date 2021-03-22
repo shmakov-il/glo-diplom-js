@@ -2667,4 +2667,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
     .slider-dots {
         bottom: 30px
     }
+
+    
+}
+
+.active-club {
+    display: block !important;
+    z-index: 99999 !important;
 }
