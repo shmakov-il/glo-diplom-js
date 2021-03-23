@@ -1108,7 +1108,7 @@ header .head .call .btn {
 }
 
 header nav.top-menu {
-    z-index: 4444;
+    z-index: 1100;
     top: 0;
     left: 0;
     width: 100%;
@@ -2075,7 +2075,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1020
+    z-index: 1120;
 }
 
 .popup .form-wrapper {
@@ -2674,4 +2674,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
 .active-club {
     display: block !important;
     z-index: 99999 !important;
+}
+.active-gift {
+    display: none;
 }

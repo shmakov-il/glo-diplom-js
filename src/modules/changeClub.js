@@ -8,6 +8,11 @@ const changeClub = () => {
             element.setAttribute('id', 'change-club');
             const change = document.getElementById('change-club');
             change.classList.toggle('active-club');
+            window.addEventListener('scroll', () => {
+                if (document.documentElement.scrollTop > 0) {
+                    change.classList.remove('active-club');
+                }
+            });
         }
     });
 };
