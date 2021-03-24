@@ -47,15 +47,13 @@ const openModal = () => {
 
     if (fixedGift) {
         window.addEventListener('resize', () => {
-            if (document.documentElement.clientWidth < 768) {
-                window.addEventListener('scroll', () => {
-                    if (document.documentElement.scrollTop > 0) {
-                        fixedGift.style.top = '70px';
-                    } else if (document.documentElement.scrollTop === 0) {
-                        fixedGift.style.top = '15px';
-                    }
-                });
-            }
+            window.addEventListener('scroll', () => {
+                if (document.documentElement.scrollTop > 0 && document.documentElement.clientWidth < 768) {
+                    fixedGift.style.top = '70px';
+                } else if (document.documentElement.scrollTop === 0 && document.documentElement.clientWidth < 768) {
+                    fixedGift.style.top = '15px';
+                }
+            });
         });
     }
 };

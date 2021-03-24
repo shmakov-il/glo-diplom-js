@@ -1538,8 +1538,6 @@ nav.popup-menu .close-menu-btn img {
 .services-slider {
     display: flex;
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px
 }
 
 .services-slider .slide {
@@ -1570,31 +1568,46 @@ nav.popup-menu .close-menu-btn img {
     max-width: 200px;
     margin: 0 auto
 }
-
-.services-slider .slider-arrow {
+#services>.wrapper {
+    position: relative;
+    padding: 0;
+}
+.wrapper .slider-arrow {
     position: absolute;
-    top: 75px;
-    margin-top: -18px;
+    top: 135px;
+    margin-top: 0px;
     z-index: 100;
-    cursor: pointer
+    cursor: pointer;
+    border: none;
+    display: flex;
 }
 
-.services-slider .slider-arrow span {
+.wrapper .slider-arrow span {
     display: block;
     width: 36px;
     height: 37px;
+    text-align: center;
+    padding-top: 11px;
+}
+
+.wrapper .slider-arrow.prev {
+    left: 2px;
     background-color: #f4c71b;
     border-radius: 50%;
-    text-align: center;
-    padding-top: 11px
+    background-image: url(../images/arrow-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
-.services-slider .slider-arrow.prev {
-    left: 2px
-}
+.wrapper .slider-arrow.next {
+    right: 2px;
+    background-color: #f4c71b;
+    border-radius: 50%;
+    background-image: url(../images/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
 
-.services-slider .slider-arrow.next {
-    right: 2px
 }
 
 #gallery {
@@ -2667,8 +2680,6 @@ p.personal-data input[type=checkbox]:checked+label:before {
     .slider-dots {
         bottom: 30px
     }
-
-    
 }
 
 .active-club {
@@ -2677,4 +2688,20 @@ p.personal-data input[type=checkbox]:checked+label:before {
 }
 .active-gift {
     display: none;
+}
+.carousel-slider {
+    overflow: hidden !important;
+}
+
+
+.carousel-slider__wrap {
+    display: flex !important;
+    justify-content: space-between !important;
+    transition: transform 0.5s !important;
+    will-change: transform !important;
+}
+
+.carousel-slider__item {
+    flex-basis: 33%;
+    margin: 0 auto !important;
 }

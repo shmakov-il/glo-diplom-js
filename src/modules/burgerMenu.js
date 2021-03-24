@@ -49,8 +49,11 @@ const burgerMenu = () => {
         document.querySelector('.popup-menu').style.display = 'flex';
     });
 
-    popupMenu.addEventListener('click', () => {
-        popupMenu.style.display = 'none';
+    popupMenu.addEventListener('click', event => {
+        const target = event.target;
+        if (target.closest('a[href^="#"]') || target.closest('img[src="images/delete.png"]')) {
+            popupMenu.style.display = 'none';
+        }
     });
 };
 
