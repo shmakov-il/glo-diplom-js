@@ -7,6 +7,7 @@ import changeClub from "./modules/changeClub";
 import openModal from "./modules/openModal";
 import sliderCarusel from "./modules/sliderCarousel";
 import sliderPhoto from "./modules/sliderPhoto";
+import sliderMain from "./modules/sliderMain";
 
 
 burgerMenu();
@@ -15,3 +16,4 @@ changeClub();
 openModal();
 sliderCarusel();
 sliderPhoto();
+sliderMain();

@@ -1314,7 +1314,8 @@ nav.popup-menu .close-menu-btn img {
 }
 
 .main-slider .slide .slide-text .offer-head {
-    margin-top: 80px;
+    position: relative;
+    top: 35px;
     background: url(../images/slider-offer-bg.png) no-repeat 10px 0;
     padding-top: 20px
 }
@@ -2412,7 +2413,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
     .main-slider .slide .slide-text .offer-head,
     .main-slider .slide.type2 .slide-text .offer-head {
         background: transparent;
-        margin-top: 30px;
+        margin-top: 0;
         text-align: center
     }
 
@@ -2597,6 +2598,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center
+    }
+
+    .main-slider .slide .slide-text .offer-head,
+    .main-slider .slide.type2 .slide-text .offer-head {
+        margin-top: 30px;     
     }
 }
 

@@ -1,10 +1,20 @@
 const sliderPhoto = () => {
     const slide = document.querySelectorAll('.gallery-slider>.slide'),
-        dots = document.querySelectorAll('.dots'),
         slider = document.querySelector('.gallery-slider');
+
+    slide.forEach(() => {
+        const liPoint = document.createElement('li');
+        liPoint.setAttribute('class', 'dots');
+        document.querySelector('.slider-dots').appendChild(liPoint);
+    });
 
     let currentSlide = 0,
         interval;
+
+    const dots = document.querySelectorAll('.dots');
+    if (currentSlide === 0) {
+        dots[0].setAttribute('class', 'dots dots-active');
+    }
 
     const prevSlide = (elem, index, strClass) => {
         elem[index].classList.remove(strClass);

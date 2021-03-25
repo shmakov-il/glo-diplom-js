@@ -58,5 +58,5 @@ const burgerMenu = () => {
         }
     });
 };
-// burgerMenu();
+
 export default burgerMenu;
