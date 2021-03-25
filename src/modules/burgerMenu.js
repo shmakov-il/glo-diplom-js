@@ -11,13 +11,15 @@ const burgerMenu = () => {
         if (document.documentElement.clientWidth < 768) {
             hiddenSmall.style.display = 'none';
             hiddenLarge.style.display = 'block';
-            setTimeout(() => {
-                topMenu.style.cssText = `
+            if (document.documentElement.scrollTop === 0) {
+                setTimeout(() => {
+                    topMenu.style.cssText = `
                 margin-top: ${head.offsetHeight}px;
                 position: fixed;
                 `;
-                headSlider.style.paddingTop = '25px';
-            }, 0);
+                    headSlider.style.paddingTop = '25px';
+                }, 0);
+            }
             window.addEventListener('scroll', () => {
                 if (document.documentElement.scrollTop > 0) {
                     topMenu.style.marginTop = '0';
@@ -56,5 +58,5 @@ const burgerMenu = () => {
         }
     });
 };
-
+// burgerMenu();
 export default burgerMenu;

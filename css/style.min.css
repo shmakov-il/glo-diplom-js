@@ -1619,19 +1619,43 @@ nav.popup-menu .close-menu-btn img {
 }
 
 #gallery .gallery-slider {
-    padding-left: 75px;
+    /* padding-left: 75px;
     padding-right: 75px;
     max-width: 900px;
     margin: 0 auto;
-    text-align: center
+    text-align: center */
+    position: relative;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #gallery .gallery-slider .slide {
-    margin: 0 auto !important;
-    width: 100%
+    /* margin: 0 auto !important;
+    width: 100%;
+    opacity: 0; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+    display: flex;
+    justify-content: center;
+    
+
 }
 
-#gallery .gallery-slider .slider-arrow {
+#gallery .gallery-slider .slide-active {
+    opacity: 1;
+}
+
+.gallery-bg .wrapper .slider-arrow {
     position: absolute;
     top: 50%;
     margin-top: -18px;
@@ -1646,27 +1670,65 @@ nav.popup-menu .close-menu-btn img {
     background-color: #f4c71b;
     border-radius: 50%;
     text-align: center;
-    padding-top: 11px
+    padding-top: 11px;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+#arrow-prev {
+    background-image: url(../images/arrow-left.png);
+}
+#arrow-next{
+    background-image: url(../images/arrow-right.png);
+}
+.gallery-bg .gallery-slider .slider-arrow.prev {
+    left: 120px;
+    background-image: url(../images/arrow-left.png);
 }
 
-#gallery .gallery-slider .slider-arrow.prev {
-    left: 0
+.gallery-bg .wrapper .slider-arrow.next {
+    right: 120px
 }
 
-#gallery .gallery-slider .slider-arrow.next {
-    right: 0
+.gallery-bg>.wrapper {
+    position: relative;
 }
 
 #gallery .gallery-slider .slider-dots {
-    left: 50%;
+    /* left: 50%;
     margin-left: -65px;
-    bottom: 5%
+    bottom: 5%; */
+    position: absolute;
+    bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 5;
+    margin-left: -88px;
 }
 
+.slider-dots>.dots {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: solid white;
+    display: inline-block;
+    -webkit-transition: background-color,
+    -webkit-transform .4s;
+    transition: background-color,
+    transform .4s,
+    -webkit-transform .4s;
+} 
+.slider-dots>.dots-active {
+    background-color: yellow;
+}
 #cards {
     padding-bottom: 4rem
 }
-
 #cards .content {
     display: -moz-flex;
     display: -ms-flex;
@@ -2290,6 +2352,15 @@ p.personal-data input[type=checkbox]:checked+label:before {
     }
 }
 
+@media only screen and (max-width:1100px) {
+    .gallery-bg .wrapper .slider-arrow.next {
+        right: 50px;
+    }
+    .gallery-bg .wrapper .slider-arrow.prev {
+        left: 50px;
+    }
+}
+
 @media only screen and (max-width:991px) {
     .hidden-991 {
         display: none !important
@@ -2477,14 +2548,16 @@ p.personal-data input[type=checkbox]:checked+label:before {
 
     #gallery .gallery-slider .slider-arrow.next,
     #gallery .gallery-slider .slider-arrow.prev {
-        display: none !important
+        display: block
     }
 
     #gallery .gallery-slider .slider-dots {
-        background-color: rgba(79, 25, 52, .5);
-        padding-top: 12px;
-        padding-left: 5px;
-        padding-right: 5px
+        display: none !important;
+    }
+    .slider-dots>.dots {
+        height: 23px;
+        width: 23px;
+        margin: 0 16px;
     }
 
     #cards .content {
@@ -2527,6 +2600,15 @@ p.personal-data input[type=checkbox]:checked+label:before {
     }
 }
 
+@media only screen and (max-width:767px) {
+    .gallery-bg .wrapper .slider-arrow.prev {
+        left: 7px;
+    }
+    .gallery-bg .wrapper .slider-arrow.next {
+        right: 7px;
+    }
+}
+
 @media only screen and (max-width:580px) {
     header .head-main .right {
         -ms-flex-wrap: wrap;
@@ -2544,6 +2626,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
 
     header .head-main .right .free-visit img {
         margin-right: 15px
+    }
+
+    #gallery .gallery-slider .slider-arrow span {
+        width: 15px;
+        height: 28px;
     }
 }
 
