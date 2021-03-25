@@ -8,6 +8,7 @@ import openModal from "./modules/openModal";
 import sliderCarusel from "./modules/sliderCarousel";
 import sliderPhoto from "./modules/sliderPhoto";
 import sliderMain from "./modules/sliderMain";
+import calc from "./modules/calc";
 
 
 burgerMenu();
@@ -17,3 +18,4 @@ openModal();
 sliderCarusel();
 sliderPhoto();
 sliderMain();
+calc();
