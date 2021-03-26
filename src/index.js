@@ -9,6 +9,9 @@ import sliderCarusel from "./modules/sliderCarousel";
 import sliderPhoto from "./modules/sliderPhoto";
 import sliderMain from "./modules/sliderMain";
 import calc from "./modules/calc";
+import sendForm from "./modules/sendForm";
+import validationForm from "./modules/validationForm";
+import sendFormModal from "./modules/sendFormModal";
 
 
 burgerMenu();
@@ -19,3 +22,6 @@ sliderCarusel();
 sliderPhoto();
 sliderMain();
 calc();
+sendForm();
+validationForm();
+sendFormModal();

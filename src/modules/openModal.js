@@ -2,6 +2,7 @@ const openModal = () => {
     const header = document.querySelector('.header-main'),
         visitForm = document.getElementById('free_visit_form'),
         callbackForm = document.getElementById('callback_form'),
+        thanks = document.getElementById('thanks'),
         fixedGift = document.querySelector('.fixed-gift'),
         gift = document.getElementById('gift');
 
@@ -32,6 +33,7 @@ const openModal = () => {
             target.classList.contains('close-btn')) {
             visitForm.style.display = 'none';
             callbackForm.style.display = 'none';
+            thanks.style.display = 'none';
             if (fixedGift) {
                 gift.style.display = 'none';
                 fixedGift.classList.remove('active-gift');
@@ -41,6 +43,7 @@ const openModal = () => {
 
     visitForm.addEventListener('click', hiddenWindow);
     callbackForm.addEventListener('click', hiddenWindow);
+    thanks.addEventListener('click', hiddenWindow);
     if (fixedGift) {
         gift.addEventListener('click', hiddenWindow);
     }
