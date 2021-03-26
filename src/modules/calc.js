@@ -19,12 +19,18 @@ const calc = () => {
                         if (long === card && testSolo) {
                             const cost = element.querySelector('.cost').textContent,
                                 price = +cost.replace(/i/, '');
-                            if (code.value === 'ТЕЛО2020') {
+                            if (code.value === 'ТЕЛО2021') {
                                 const percent = price / 100 * 30;
                                 priceTotal.textContent = price - Math.ceil(percent);
                             } else {
                                 priceTotal.textContent = price;
                             }
+                            const hiddenInput = document.createElement('input'),
+                                form = document.getElementById('card_order');
+                            hiddenInput.setAttribute('value', `${priceTotal.textContent}`);
+                            hiddenInput.setAttribute('name', 'price-total');
+                            hiddenInput.style.display = 'none';
+                            form.appendChild(hiddenInput);
                         }
                     }
                 });

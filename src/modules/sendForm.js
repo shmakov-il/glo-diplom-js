@@ -1,4 +1,5 @@
 const sendForm = () => {
+
     const errorMessage = 'Что-то пошло не так...',
         loadMessage = 'Загрузка...',
         statusMessage = document.createElement('div');
@@ -17,6 +18,7 @@ const sendForm = () => {
         } else {
             statusMessage.style.cssText = 'font-size: 1.1rem; color: #ffffff;';
         }
+
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
         statusMessage.style.paddingTop = '15px';

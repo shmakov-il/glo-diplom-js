@@ -1,10 +1,11 @@
 const changeClub = () => {
-    const clubsList = document.querySelector('.clubs-list');
+    const clubsList = document.querySelector('.clubs-list'),
+        body = document.querySelector('body');
 
-    clubsList.addEventListener('click', event => {
+    body.addEventListener('click', event => {
         const target = event.target;
         if (target.textContent === 'Выбрать клуб') {
-            const element = clubsList.lastChild.previousSibling;
+            const element = clubsList.querySelector('ul');
             element.setAttribute('id', 'change-club');
             const change = document.getElementById('change-club');
             change.classList.toggle('active-club');
@@ -13,6 +14,9 @@ const changeClub = () => {
                     change.classList.remove('active-club');
                 }
             });
+        } else if (document.getElementById('change-club')) {
+            const change = document.getElementById('change-club');
+            change.classList.remove('active-club');
         }
     });
 };

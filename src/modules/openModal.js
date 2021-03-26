@@ -36,7 +36,6 @@ const openModal = () => {
             thanks.style.display = 'none';
             if (fixedGift) {
                 gift.style.display = 'none';
-                fixedGift.classList.remove('active-gift');
             }
         }
     };
@@ -44,6 +43,7 @@ const openModal = () => {
     visitForm.addEventListener('click', hiddenWindow);
     callbackForm.addEventListener('click', hiddenWindow);
     thanks.addEventListener('click', hiddenWindow);
+
     if (fixedGift) {
         gift.addEventListener('click', hiddenWindow);
     }
